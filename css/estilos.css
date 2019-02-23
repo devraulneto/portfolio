@@ -1,0 +1,521 @@
+/* Classes auxiliares */
+:root{
+    --principal: #f26651;
+    --secundaria:#FC2F05;
+    --cinza: #f8f8f8;
+    --branco: #ffffff;
+    --preto: #1e1e1e;
+    --preto2: #161616;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html,body{
+    height: 100%;
+}
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+    padding: 0 2%;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+}
+
+.line{
+    width: 120px;
+    height: 4px;
+    background-color: var(--principal);
+    margin: 5px auto;
+}
+
+.serif{
+    font-family: "Times New Roman", Times, serif;
+}
+
+/* Estilos do site */
+/* Sessão logotipo e menu principal */
+
+header{
+    width: 100%;
+    height: 75px;
+}
+
+.logo img{
+    margin-top: 5px;
+    height: 70px;
+}
+
+.menu-icon-mobile{
+    display: none;
+}
+
+.menu-icon-mobile:hover{
+    cursor: pointer;
+}
+
+.menu ul{
+    display: flex;
+}
+
+.menu ul li{
+    line-height: 75px;
+    padding: 0 10px;
+    font-size: 15px;
+    transition: .5s;
+}
+
+.menu ul li:hover{
+    background-color: var(--principal);
+}
+
+.menu ul li:hover a{
+    color: var(--branco);
+}
+
+.menu ul li a{
+    display: block;
+    transition: .5s;
+    color: var(--preto);
+}
+
+/* Estilos para o Banner */
+.banner{
+    width: 100%;
+    height: 500px;
+    background-image: url(../images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.chamada{
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--branco);
+    text-align: center;
+}
+
+.chamada-title h1{
+    font-size: 52px;
+    margin-bottom: 5px;
+}
+
+.chamada-title h1::after{
+    content: "|";
+    margin-left: 10px;
+    animation: blink 1s infinite;
+}
+
+.chamada-subtitle h2{
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.chamada-btn{
+    display: inline-block;
+    width: 120px;
+    height: 45px;
+    line-height: 45px;
+    background-color: var(--secundaria);
+    transition: .5s;
+}
+
+.chamada-btn:hover{
+    background-color: var(--principal);
+}
+
+.chamada-btn a{
+    display: block;
+    color: var(--branco);
+}
+
+/* Sessão sobre e tecnologias */
+.quem-sou{
+    padding: 50px 0;
+}
+
+.sobre h2,
+.redes-sociais h2,
+.tecnologias h2{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.sobre h2::after,
+.redes-sociais h2::after,
+.tecnologias h2::after{
+    display: block;
+    content: "";
+    width: 120px;
+    height: 4px;
+    background-color: var(--principal);
+    margin: 5px 0;
+}
+
+.widget-left,
+.widget-right{
+    flex: 1;
+}
+
+.widget-right{
+    display: flex;
+    flex-direction: column;
+}
+
+.redes-sociais,
+.tecnologias{
+    margin-left: 50px;
+}
+
+.sobre .content{
+    margin-top: 15px;
+}
+
+.tecnologias{
+    margin-bottom: 50px;
+}
+
+.tecnologias-icons{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tecnologias-icons img{
+    width: 48px;
+    height: 48px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.sobre .content p{
+    line-height: 25px;
+    font-weight: lighter;
+    text-align: justify;
+    margin-bottom: 5px;
+}
+
+.redes-sociais-icons{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.redes-sociais-icons img{
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+    margin-top: 10px;
+    transition: .5s;
+}
+
+.redes-sociais-icons img:hover{
+    opacity: 0.5;
+}
+
+/* Sessão para os meus serviços */
+.servicos{
+    padding: 50px 0 0 0;
+    background-color: var(--cinza);
+}
+
+.title{
+    text-align: center;
+}
+
+.title h2{
+    font-size: 24px;
+}
+
+.title h2::after{
+    display: block;
+    content: "";
+    width: 120px;
+    height: 4px;
+    background-color: var(--principal);
+    margin: 5px auto;  
+}
+
+.servicos-wrapper{
+    margin: 50px 0 0 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.servico-single{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    width: 300px;
+    height: 270px;
+    padding: 30px 20px;
+    margin-right: 40px;
+    margin-bottom: 50px;
+    background-color: var(--branco);
+    border-radius: 5px;
+    -webkit-box-shadow: 3px 3px 5px 0px rgba(204,204,204,1);
+    -moz-box-shadow: 3px 3px 5px 0px rgba(204,204,204,1);
+    box-shadow: 3px 3px 5px 0px rgba(204,204,204,1);
+}
+
+.servico-single .servico-img{
+    margin-bottom: 20px;
+}
+
+.servico-img img{
+    width: 64px;
+    height: 64px;
+}
+
+.servico-single .servico-title{
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.servico-single .servico-content{
+    font-size: 14px;
+    font-weight: lighter;
+    line-height: 23px;
+}
+
+/* Estilos da sessão diferenciais */
+
+.diferenciais{
+    width: 100%;
+    padding: 50px 0;
+    background-color: var(--preto);
+}
+
+.diferenciais h2{
+    text-align: center;
+    color: var(--branco);
+}
+
+.diferenciais-wrapper{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.diferencial-single{
+    width: 350px;
+    text-align: center;
+    color: var(--branco);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 50px;
+}
+
+.diferencial-single .diferencial-image{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.diferencial-single .diferencial-title{
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.diferencial-single .diferencial-content{
+    font-size: 14px;
+    line-height: 23px;
+}
+
+/* Estilos para o form de contato */
+
+#contato{
+    width: 100%;
+    height: auto;
+    background-image: url(../images/background-contato.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+#contato .wrapper{
+    display: flex;
+    flex: 1;
+}
+
+.form-contato{
+    width: 100%;
+    max-width: 600px;
+    padding: 50px 0;
+}
+
+.form-contato h3{
+    color: var(--branco);
+    font-size: 21px;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+
+.form-contato input[type=text],
+.form-contato input[type=email]{
+    width: 100%;
+    height: 40px;
+    padding-left: 8px;
+    margin-bottom: 5px;
+}
+
+.form-contato textarea{
+    width: 100%;
+    resize: none;
+    height: 120px;
+    padding-left: 8px;
+    padding-top: 8px;
+    margin-bottom: 5px;
+}
+
+.form-contato input[type=submit]{
+    width: 120px;
+    height: 40px;
+    background-color: var(--principal);
+    border: 1px solid var(--principal);
+    color: var(--branco);
+    transition: .5s;
+}
+
+.form-contato input[type=submit]:hover{
+    cursor: pointer;
+    background-color: var(--secundaria);
+    border: 1px solid var(--secundaria);
+}
+
+/* Estilos para o Rodapé */
+
+footer{
+    background-color: var(--preto2);
+    height: 60px;
+}
+
+.footer-wrapper{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+}
+
+footer .copy p,
+footer .dev p,
+footer .contato p{
+    color: var(--branco);
+    line-height: 60px;
+    font-size: 14px;
+}
+
+footer .contato p a{
+    color: var(--branco);
+}
+
+/* Media queries */
+@media screen and (max-width: 992px){
+    .logo img{
+        height: 60px;
+    }
+
+    .servicos-wrapper{
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .menu-icon-mobile{
+        display: block;
+        font-size: 26px;
+        margin-top: 20px;
+        margin-right: 5px;
+    }
+
+    .menu ul{
+        display: none;
+        position: absolute;
+        left: 0;
+        top: 60px;
+        width: 100%;
+    }
+
+    .menu ul li{
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .chamada-title h1{
+        font-size: 46px;
+    }
+
+    .quem-sou .flex{
+        flex-direction: column;
+    }
+
+    .tecnologias{
+        display: none;
+    }
+
+    .redes-sociais{
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .diferenciais-wrapper{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .diferencial-single{
+        margin-right: 0;
+    }
+
+    footer{
+        height: auto;
+    }
+
+    .footer-wrapper{
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .servico-single{
+        margin-right: 0;
+    }
+}
+
+/* Animações */
+@keyframes blink{
+    0%,100%{
+       opacity: 1; 
+    }
+    50%{
+        opacity: 0;
+    }
+}
